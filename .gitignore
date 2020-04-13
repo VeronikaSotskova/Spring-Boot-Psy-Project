@@ -1,0 +1,7 @@
+/src/main/resources/static/mdbootstrap/
+/src/main/resources/static/mdbootstrap2/
+.idea
+*.properties
+/uploads/
+/target/
+.mvn
