@@ -1,6 +1,12 @@
-
+<#include "security.ftlh">
 
 <#macro user_card account>
+    <script src="/static/mdbootstrap2/js/addons/rating.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#rateMe3').mdbRate();
+        });
+    </script>
     <#if account.experience == 1>
         <#assign
             strExp = "год"
@@ -17,36 +23,45 @@
 
     <#if account.gender == 'FEMALE'>
     </#if>
-    <div class="card testimonial-card m-2 pt-2 grey lighten-3">
 
+    <!-- Card -->
+    <div class="card testimonial-card mb-4">
+
+        <!-- Background color -->
+        <div class="card-up info-color">
+        </div>
 
         <!-- Avatar -->
-        <div class="avatar white mx-auto text-center grey lighten-3">
-            <img src="/img/${account.avatarFilename!'avatar.jpg'}"
-                 class="rounded-circle z-depth-1"
-                 alt="avatar" width="150px" height="150px">
+        <div class="avatar mx-auto white"><img
+                    src="/img/${account.avatarFilename!'avatar.jpg'}"
+                    class="rounded-circle img-responsive"
+            width="110px"
+            height="110px">
         </div>
 
-        <!-- Content -->
-        <div class="card-body grey lighten-3">
-            <h5 class="card-title ">${account.name} ${account.surname}</h5>
-            <hr>
+        <div class="card-body">
+            <!-- Name -->
+            <h4 class="card-title mt-2"><strong>${account.name} ${account.surname}</strong></h4>
+            <hr class="mb-3">
             <!-- Quotation -->
-            <p><i class="fas fa-quote-left grey lighten-3"></i> Пол: <#if account.gender == 'FEMALE'>женский<#else>мужской
-                </#if>
-            </p>
+            <p><i class="fas fa-quote-left"></i>Пол: <#if account.gender == 'FEMALE'>женский<#else>мужской
+                </#if>.</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item grey lighten-3">Age: ${account.age}</li>
-            <li class="list-group-item grey lighten-3">Experience: ${account.experience} ${strExp}</li>
+            <li class="list-group-item">Age: ${account.age}</li>
+            <li class="list-group-item">Experience: ${account.experience} ${strExp}</li>
             <#if account.about??>
-                <li class="list-group-item grey lighten-3">${account.about!''}</li>
+                <li class="list-group-item">${account.about!''}</li>
             </#if>
         </ul>
-        <div class="card-body grey lighten-3">
+        <div class="container">
+            <span id="rateMe3"  class="rating-faces"></span>
+        </div>
+        <div class="card-body ">
             <a href="#" class="card-link">Написать</a>
         </div>
 
     </div>
-    <!-- Card -->
+    <!-- rating.js file -->
+
 </#macro>

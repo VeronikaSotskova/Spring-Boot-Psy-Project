@@ -18,7 +18,7 @@ public class ProfileDto {
     @Size(min=2, message = "Surname too short")
     private String surname;
 
-    @Size(min=2, message = "Patronymic too short")
+
     private String patronymic;
 
     @Email(message = "Email should be valid")

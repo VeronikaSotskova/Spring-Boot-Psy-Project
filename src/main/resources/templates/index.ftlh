@@ -21,7 +21,7 @@
             webSocket.onmessage = function receiveMessage(response) {
                 let data = response['data'];
                 let json = JSON.parse(data);
-                $('#messagesList').append("<li>" + json['text'] + "</li>")
+                $('#messagesList').append("<li>" + json['from'] + ' ' + json['text'] + "</li>")
             }
 
         }

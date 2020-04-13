@@ -1,6 +1,6 @@
 <#macro form>
     <!-- Default form login -->
-    <form class="text-center border border-dark rounded mb-0 p-5 mt-5 z-depth-3" action="/signIn" method="post">
+    <form class="text-center mb-0 p-5 mt-5 z-depth-3" action="/signIn" method="post">
 
         <p class="h4 mb-4">Вход</p>
 
