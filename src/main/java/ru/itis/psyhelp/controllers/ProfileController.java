@@ -2,6 +2,7 @@ package ru.itis.psyhelp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,10 +23,13 @@ import ru.itis.psyhelp.service.AccountService;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 import static ru.itis.psyhelp.controllers.ControllerUtils.getErrors;
+import static ru.itis.psyhelp.models.Role.DOCTOR;
 
 @Controller
 @RequestMapping("/profile")

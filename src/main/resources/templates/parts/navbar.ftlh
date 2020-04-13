@@ -1,7 +1,8 @@
 <#include "security.ftlh">
 <#import "logout_part.ftlh" as logout>
 
-<nav class="navbar navbar-expand-lg navbar-dark elegant-color mb-2">
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark elegant-color">
     <a class="navbar-brand" href="/">Psy</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +17,14 @@
             <li class="nav-item <#if nav_tab??><#if nav_tab=="doctor_list">active</#if></#if>">
                 <a class="nav-link" href="/doctor-list">Doctor List</a>
             </li>
+            <li class="nav-item <#if nav_tab??><#if nav_tab=="problems">active</#if></#if>">
+                <a class="nav-link" href="/problems">Problem List</a>
+            </li>
+            <#if known>
+                <li class="nav-item <#if nav_tab??><#if nav_tab=="my_problems">active</#if></#if>">
+                    <a class="nav-link" href="/problems/user-list">My messages</a>
+                </li>
+            </#if>
         </ul>
 
         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -48,3 +57,9 @@
         </ul>
     </div>
 </nav>
+    <section>
+        <div class="">
+            <img src="https://mdbootstrap.com/img/Photos/Others/nature4.jpg" style="width: 100%">
+        </div>
+    </section>
+</header>
